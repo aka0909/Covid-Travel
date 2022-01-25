@@ -1,0 +1,28 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#section{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+#country-selector{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
+
+
