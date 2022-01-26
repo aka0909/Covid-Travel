@@ -209,6 +209,10 @@ const country_list_element = document.getElementById('country-selector');
 function create_country_list(){
     const num_countries = country_list.length;
 
+    country_list.sort(function(a,b) {
+        return b.name - a.name
+    });
+
     let i = 0, ul_list_id;
 
     country_list.forEach( (country, index) => {
@@ -219,7 +223,7 @@ function create_country_list(){
         }
 
         document.getElementById(`${ul_list_id}`).innerHTML += `
-            <li onclick="fetchData('${country.name}')" id="${country.name}">
+            <li onclick="fetchData('${country.name}')" id="${country.name}" class="country">
             ${country.name}
             </li>
         `;

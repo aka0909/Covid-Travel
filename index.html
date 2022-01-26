@@ -19,7 +19,7 @@
 
         <div id="section">
 
-            <div id="about" class="col-4">
+            <div id="about" >
                 <h1>ABOUT</h1>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
                 Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage,
@@ -28,9 +28,36 @@
                 The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
             </div>
 
-            <div id="chart" class="col-8">
-                <canvas id="chart1"></canvas>
-            </div>
+            <div  id="statistics-area">
+                <div class="nation-info">
+                    <div class="flag info"></div>
+                    <div class="name info">Loading...</div>
+                    <div class="total-cases info">
+                        <div class="title">Total Cases</div>
+                        <div class="value">0</div>
+                        <div class="new-value">+0</div>
+                    </div>
+                    <div class="recovered info">
+                        <div class="title">Recovered</div>
+                        <div class="value">0</div>
+                        <div class="new-value">+0</div>
+                    </div>
+                    <div class="deaths info">
+                        <div class="title">Deaths</div>
+                        <div class="value">0</div>
+                        <div class="new-value">+0</div>
+                    </div>
+                </div>
+
+                <div id="chart" >
+                    <canvas id="chart1"></canvas>
+                </div>
+
+                <div id="chart" >
+                    <canvas id="chart2"></canvas>
+                </div>
+
+            </div>        
 
         </div>
 
@@ -43,10 +70,9 @@
 
         </div>
 
-        <!-- <iframe id="if" class="ifr" src='https://webchat.botframework.com/embed/azurechatbot12-bot?s=x75kAvk3uBY.yaeafiwoa06jCc5h4Qj3KxsnaEtuNR2GP-Dik1PLmUw'></iframe>
-        <button  class="bot-button">Covid-ChatBot</button> -->
 
         <iframe src="https://webchat.botframework.com/embed/webot-a01b-bot?s=gQx2GAHSwLU.aQIGPA6UHOvp0-cGZFSyYDizVkX7WqfW2xyRA5ouhlg" style="height: 502px; max-height: 502px;"></iframe>
+        <button  class="askMe-button">Ask Me</button>
     
         
 

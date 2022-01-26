@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
 html {
     padding: 0;
     margin: 0;
 }
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+
 
 main{
     display: flex;
@@ -11,11 +24,41 @@ main{
     padding: 10px;
 }
 
+ul{
+    list-style-type: none;
+}
+
 #section{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 100vh;
 }
+
+#about{
+    min-height: 100vh;
+}
+
+#statistics-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nation-info{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 80%;
+    padding: 20px;
+    /* border-left: rgba(0, 0, 0, 0.116) 2px solid; */
+}
+
+.nation-info .name{
+    font-size: 50px;
+}
+
+
 
 #country-selector{
     display: flex;
@@ -25,4 +68,82 @@ main{
     display: none;
 }
 
+#chart{
+    cursor: pointer;
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 50px 0;
+    /* border-left: rgba(0, 0, 0, 0.116) 2px solid; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 20px;
+}
+
+/* .info{
+    margin:10px;
+} */
+
+.country{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.country:hover{
+    /* background-color: rgba(190, 187, 187, 0.329); */
+    opacity:1;
+}
+
+.askMe-button{
+  
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  /* font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif; */
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.askMe-button:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.askMe-button:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .button-71 {
+    padding: 16px 48px;
+  }
+}
+
+#country-selector{
+    background-image: url('/kindpng_1074372.png');
+    background-repeat: none;
+    background-size: cover;
+    /* opacity: 0.5; */
+}
 
