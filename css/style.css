@@ -65,8 +65,8 @@ ul{
     flex:0.6;
     flex-grow:0.6;
     flex-direction: row-reverse;
-    width: 100vh;
-    height: 80vh;
+    width: 89vh;
+    height: 69vh;
     border-top-right-radius:0;
     border-top-left-radius:0;
     border-bottom-right-radius:0;
@@ -187,7 +187,7 @@ a:hover {
 
 #country-selector{
     display: flex;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.6);
     height: 100vh;
     /* padding-top: 20px; */
     margin: none;
