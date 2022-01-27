@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin:none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#section-1{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin:none;
+    width:100%;
+}
+/* =======================================================ABOUT STYLING ================================================================== */
+
+.banner{
+    display:flex;
+    flex-grow: 1;
+    justify-content:space-between;
+    min-height:100vh;
+    color: white;
+    background: #00c6ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#About{
+    flex:0.4;
+    flex-grow: 0.4;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: 30vh;
+    margin-bottom: 20px;
+    display:flex;
+    flex-direction: column;
+    padding:10px;
+}
+
+#About-image{
+    background-color:white;
+    display:flex;
+    flex:0.6;
+    flex-grow:0.6;
+    flex-direction: row-reverse;
+    width: 100vh;
+    height: 80vh;
+    border-top-right-radius:0;
+    border-top-left-radius:0;
+    border-bottom-right-radius:0;
+    border-bottom-left-radius:100%;
+}
+
+#travel{
+    max-width: 100%;
+    max-height: 70%;
+}
+
+
+.btn-primary{
+    background-color:transparent;
+    color:white;
+    border-radius: 100px;
+    padding: 15px;
+    transition: all .2s ease-in;
+    border-color:white;
+}
+.btn-primary:hover{
+    transform: translateY(-2px);
+    border:none;
+    background-color: #48cae4;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+a{
+    color:white;
+    text-decoration: none;
+}
+a:hover {
+    color:white;
+    text-decoration: none;
+    
+  }
+/* =======================================================STATISTICS STYLING ================================================================== */
+
+#statistics-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nation-info{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 80%;
+    padding: 20px;
+    /* border-left: rgba(0, 0, 0, 0.116) 2px solid; */
+}
+
+.nation-info .name{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.title{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.recovered{
+    color: rgb(17, 192, 17);
+}
+
+.deaths{
+    color: red;
+}
+
+/* =======================================================CHARTS STYLING ================================================================== */
+
+
+#charts{
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+#chart{
+    cursor: pointer;
+    width: 40%;
+    max-height: 70vh;
+    margin: 0 auto;
+    padding: 50px 0;
+    /* border-left: rgba(0, 0, 0, 0.116) 2px solid; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 20px;
+}
+
+/* =======================================================SEARCH STYLING ================================================================== */
+
+
+#search-input{
+    border:none;
+    background-color: rgb(221, 221, 221);
+    border-radius: 50px;
+    padding:5px;
+}
+
+/* =======================================================COUNTRIES LIST STYLING ================================================================== */
+#country-selector-bg{
+    min-height: 100vh;
+    background-image: url('/imgs/map.png');
+    position: relative;
+    background-size: cover;
+    color: white;
+    /* opacity: 0.5; */
+    margin: none;
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#country-selector{
+    display: flex;
+    background-color: rgba(0,0,0,0.7);
+    height: 100vh;
+    /* padding-top: 20px; */
+    margin: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.country{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.country:hover{
+    /* background-color: rgba(190, 187, 187, 0.329); */
+    opacity:1;
+}
+
+.hide{
+    display: none;
+}
+
+.camouflage{
+    color: rgba(0,0,0,0.8);
+}
+
+/* =======================================================ASK ME BUTTON STYLING ================================================================== */
+
+.askMe-button{
+  
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  /* font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif; */
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.askMe-button:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.askMe-button:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+/* =======================================================MEDIA QUERIES ================================================================== */
+
+@media (min-width: 768px) {
+  .button-71 {
+    padding: 16px 48px;
+  }
+}
+
+/* =======================================================END OF STYLING================================================================== */
+

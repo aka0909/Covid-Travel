@@ -6,9 +6,21 @@ const recovered_element = document.querySelector(".recovered .value");
 const new_recovered_element = document.querySelector(".recovered .new-value");
 const deaths_element = document.querySelector(".deaths .value");
 const new_deaths_element = document.querySelector(".deaths .new-value");
+const summary = document.getElementById("summary");
+const access_restrictions = document.getElementById("access_restrictions");
+const area_policy = document.getElementById("area_policy");
+const hotspots = document.getElementById("hotspots");
+const askMe_button = document.querySelector("askMe-button");
+const bot = document.getElementById("bot");
+const download = document.querySelector('.download');
+const statistics = document.getElementById('statistics-area')
 
 const ctx1 = document.getElementById("chart1").getContext("2d");
 const ctx2 = document.getElementById("chart2").getContext("2d");
+
+let token;
+
+
 
 
 let cases_list = [];
@@ -32,34 +44,105 @@ var requestOptions = {
  .then(data =>{
      countryName.innerHTML = `${data.country_name}`;
      let flag=false;
-     let user_country_name;
+     let user_country_name, user_country_code;
      country_list.forEach(ele=>{
          if(ele.code === data.country_code2){
              flag=true;
              user_country_name=ele.name;
+             user_country_code=ele.code;
          }
      });
      if(!flag){
          alert('Sorry. Could not find any info')
      }else{
-         fetchData(user_country_name);
+         fetchData(user_country_name, user_country_code);
      }
  });
 
- //Fetch All Data By Country Code
- function fetchData(name) {
+ //Fetch All Data By Country Code and Name
+ function fetchData(name,code) {
     countryName.innerHTML = "Loading...";
     flag.innerHTML ="";
+    summary.innerHTML="";
+    access_restrictions.innerHTML="";
+    area_policy.innerHTML="";
+    hotspots.innerHTML="";
+
     cases_list.length = 0;
     recovered_list.length = 0;
     deaths_list.length = 0;
     dates_list.length = 0;
     formatedDates.length = 0;
-    api_fetch(name);
+    api_fetch_stats(name);
+    api_fetch_restrictions(code);
+
+  }
+
+  const api_fetch_restrictions = async(code)=>{
+
+    // await fetch("https://test.api.amadeus.com/v1/security/oauth2/token", {
+    //   body: "grant_type=client_credentials&client_id=UAhrbGdonFS8rPqeeEURHnstLJVeUmCa&client_secret=Srxn7woV3HSoSwak",
+    //   headers: {
+    //     "Content-Type": "application/x-www-form-urlencoded"
+    //   },
+    //   method: "POST"
+    //   }).then(res => res.json())
+    //   .then(data =>{
+    //      token= data.access_token;
+    //     //  console.log(token);
+    //   });
+
+    await fetch(`https://test.api.amadeus.com/v1/duty-of-care/diseases/covid19-area-report?countryCode=${code}`, {
+      headers: {
+        // Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`
+      }
+    }).then(res=>res.json())
+    .then(data => {
+      console.log(data);
+
+      console.log(data.data.areaAccessRestriction);
+      const object = data.data.areaAccessRestriction;
+      for (const [key, value] of Object.entries(object)) {
+        // console.log(key, value);
+        if(value.text){
+          access_restrictions.innerHTML+=value.text;
+        }
+      }
+
+      if(!access_restrictions.innerHTML){
+        access_restrictions.innerHTML+= '<p>Sorry no information found</p>'
+      }
+
+      if(data.data.areaPolicy.text){
+        area_policy.innerHTML+=data.data.areaPolicy.text;
+      }else{
+        area_policy.innerHTML+='<p>Sorry no information found</p>';
+      }
+
+      if(data.data.hotspots){
+        hotspots.innerHTML+=data.data.hotspots;
+      }else{
+        hotspots.innerHTML+='<p>Sorry no information found</p>';
+      }
+
+      if(data.data.summary){
+        hotspots.innerHTML+=data.data.summary;
+      }else{
+        hotspots.innerHTML+='<p>Sorry no information found</p>';
+      }
+
+      
+      
+    });
   }
 
 
-  const api_fetch = async (name) => {
+
+  
+
+
+  const api_fetch_stats = async (name) => {
     await fetch(
       base_url + name + "/status/confirmed",
       requestOptions
@@ -142,7 +225,7 @@ var requestOptions = {
         data: {
           datasets: [
             {
-              label: "Total Cases",
+              label: "Active Cases",
               data: cases_list,
               fill: false,
               borderColor: "black",
@@ -177,7 +260,7 @@ var requestOptions = {
         },
       });
     
-      let Xarr = ["Total Cases", "Recovered",  "Deaths"];
+      let Xarr = ["Active Cases", "Recovered",  "Deaths"];
       let Yarr = [cases_list[cases_list.length - 1], recovered_list[recovered_list.length - 1], deaths_list[deaths_list.length - 1]]
       let colors = ["black","#009688", "#f44336"]
 
@@ -205,6 +288,27 @@ var requestOptions = {
 
  }
 
+ askMe_button.addEventListener('click',()=>{
+   if(bot.classList.contains('hide')){
+     bot.classList.remove('hide');
+   }else{
+    bot.classList.add('hide');
+   }
+
+ })
+
+//  download.onclick = function() {
+//    const a = document.createElement("a");
+
+
+//    document.body.appendChild(a);
+//    a.href = statistics.toDataURL();
+//    a.download = "statistics.png";
+//    a.click();
+//    document.body.removeChild(a);
+    
+
+//   }
 
 
 
