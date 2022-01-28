@@ -13,15 +13,15 @@ const hotspots = document.getElementById("hotspots");
 const askMe_button = document.querySelector("askMe-button");
 const bot = document.getElementById("bot");
 const download = document.querySelector('.download');
-const statistics = document.getElementById('statistics-area')
+const statistics = document.getElementById('statistics-area');
+const risk_info = document.getElementById('risk_info');
+const get_started = document.getElementById('get_started');
+const chart1=document.getElementById("chart1");
 
 const ctx1 = document.getElementById("chart1").getContext("2d");
 const ctx2 = document.getElementById("chart2").getContext("2d");
 
 let token;
-
-
-
 
 let cases_list = [];
 let recovered_list = [];
@@ -36,7 +36,7 @@ var requestOptions = {
     redirect: "follow",
  };
 
-
+//  ==============================================================================================================================================
 
 //Get user's country name and code
  fetch("https://api.ipgeolocation.io/ipgeo?apiKey=899a7f5600e74b70a9b26d0ee79d3954")
@@ -59,6 +59,8 @@ var requestOptions = {
      }
  });
 
+//  ==============================================================================================================================================
+
  //Fetch All Data By Country Code and Name
  function fetchData(name,code) {
     countryName.innerHTML = "Loading...";
@@ -67,6 +69,7 @@ var requestOptions = {
     access_restrictions.innerHTML="";
     area_policy.innerHTML="";
     hotspots.innerHTML="";
+    risk_info.innerHTML="";
 
     cases_list.length = 0;
     recovered_list.length = 0;
@@ -75,9 +78,12 @@ var requestOptions = {
     formatedDates.length = 0;
     api_fetch_stats(name);
     api_fetch_restrictions(code);
+    get_started.click();
 
   }
-
+//  ==============================================================================================================================================
+  
+  //Fetch restriction in the country using the Amadeus API and update DOM
   const api_fetch_restrictions = async(code)=>{
 
     // await fetch("https://test.api.amadeus.com/v1/security/oauth2/token", {
@@ -127,21 +133,23 @@ var requestOptions = {
       }
 
       if(data.data.summary){
-        hotspots.innerHTML+=data.data.summary;
+        summary.innerHTML+=data.data.summary;
       }else{
-        hotspots.innerHTML+='<p>Sorry no information found</p>';
+        summary.innerHTML+='<p>Sorry no information found</p>';
       }
 
-      
+      if(data.data.diseaseRiskLevel){
+        risk_info.innerHTML+=data.data.diseaseRiskLevel;
+      }else{
+        risk_info.innerHTML+='<p>Sorry no information found</p>';
+      } 
       
     });
   }
 
-
-
+//  ==============================================================================================================================================
   
-
-
+  //Fetch information from COVID 19 API and update DOM 
   const api_fetch_stats = async (name) => {
     await fetch(
       base_url + name + "/status/confirmed",
@@ -186,13 +194,16 @@ var requestOptions = {
     updateDOM(name);
   };
 
-  
+//  ==============================================================================================================================================
+
  function updateDOM(name){
     updateStats(name);
     updateChart();
 
  }
+//  ==============================================================================================================================================
 
+ //Update the statistics 
  function updateStats(name){
     const total_cases = cases_list[cases_list.length - 1];
     const new_confirmed_cases = total_cases - cases_list[cases_list.length - 2];
@@ -211,6 +222,10 @@ var requestOptions = {
     deaths_element.innerHTML = total_deaths;
     new_deaths_element.innerHTML = `+${new_deaths_cases}`;
  }
+
+//  ==============================================================================================================================================
+
+ //Update the information in the 2 charts
 
  let my_chart1;
  let my_chart2;
@@ -269,7 +284,7 @@ var requestOptions = {
       }
 
       my_chart2 = new Chart(ctx2, {
-        type: "doughnut",
+        type: "bar",
         data: {
             labels: Xarr,
             datasets: [{
@@ -283,10 +298,9 @@ var requestOptions = {
         }
 
       });
-
-
-
  }
+
+//  ==============================================================================================================================================
 
  askMe_button.addEventListener('click',()=>{
    if(bot.classList.contains('hide')){
@@ -297,12 +311,15 @@ var requestOptions = {
 
  })
 
+//  ==============================================================================================================================================
+
+
 //  download.onclick = function() {
 //    const a = document.createElement("a");
 
 
 //    document.body.appendChild(a);
-//    a.href = statistics.toDataURL();
+//    a.href = chart1.toDataURL();
 //    a.download = "statistics.png";
 //    a.click();
 //    document.body.removeChild(a);

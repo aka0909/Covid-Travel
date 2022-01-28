@@ -27,6 +27,19 @@ ul{
     list-style-type: none;
 }
 
+footer{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: relative;
+}
+
+.fa-plane{
+    width: 20px;
+    height: 20px;
+    transform: rotate(-90deg);
+}
+
 #section-1{
     display: flex;
     flex-direction: column;
@@ -160,6 +173,15 @@ a:hover {
     margin-bottom: 20px;
 }
 
+#travel-bulletin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 20px;
+}
+
 /* =======================================================SEARCH STYLING ================================================================== */
 
 
@@ -168,6 +190,7 @@ a:hover {
     background-color: rgb(221, 221, 221);
     border-radius: 50px;
     padding:5px;
+    padding-left: 20px;
 }
 
 /* =======================================================COUNTRIES LIST STYLING ================================================================== */
