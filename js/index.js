@@ -10,13 +10,14 @@ const summary = document.getElementById("summary");
 const access_restrictions = document.getElementById("access_restrictions");
 const area_policy = document.getElementById("area_policy");
 const hotspots = document.getElementById("hotspots");
-const askMe_button = document.querySelector("askMe-button");
+const askMe_button = document.querySelector(".askMe-button");
 const bot = document.getElementById("bot");
 const download = document.querySelector('.download');
 const statistics = document.getElementById('statistics-area');
 const risk_info = document.getElementById('risk_info');
 const get_started = document.getElementById('get_started');
 const chart1=document.getElementById("chart1");
+const headings = document.querySelectorAll("#heading");
 
 const ctx1 = document.getElementById("chart1").getContext("2d");
 const ctx2 = document.getElementById("chart2").getContext("2d");
@@ -329,3 +330,6 @@ var requestOptions = {
 
 
 
+headings.onclick = function(e){
+console.log(e);
+}
