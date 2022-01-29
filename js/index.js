@@ -71,7 +71,7 @@ var requestOptions = {
     area_policy.innerHTML="";
     hotspots.innerHTML="";
     risk_info.innerHTML="";
-
+    console.log(code);
     cases_list.length = 0;
     recovered_list.length = 0;
     deaths_list.length = 0;

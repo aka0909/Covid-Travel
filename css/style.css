@@ -14,12 +14,6 @@ body{
     font-family: 'Quicksand', sans-serif;
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-}
-
-
 main{
     display: flex;
     flex-direction: column;
@@ -39,11 +33,77 @@ footer{
     position: relative;
 }
 
+.hide{
+    display: none;
+}
+/* =======================================================NAVBAR STYLING ================================================================== */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
 .fa-plane{
     width: 20px;
     height: 20px;
     transform: rotate(-90deg);
 }
+
+/* =======================================================ASK ME BUTTON STYLING ================================================================== */
+
+.askMe-button{
+  
+    background-color: #0078d0;
+    border: 0;
+    border-radius: 17.5px;
+    /* border-radius: 56px; */
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    /* font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif; */
+    font-size: 18px;
+    font-weight: 600;
+    outline: 0;
+    /* padding: 16px 21px; */
+    padding: 10px 15px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .askMe-button:before {
+    background-color: initial;
+    background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+    /* border-radius: 125px; */
+    border-radius: 150px;
+    content: "";
+    height: 50%;
+    left: 4%;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    transition: all .3s;
+    width: 92%;
+  }
+  
+  .askMe-button:hover {
+    box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+    transform: scale(1.05);
+  }
+  
+  #bot{
+      position:fixed;
+      top: 63px;
+      right: 0px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+/* =======================================================ABOUT STYLING ================================================================== */
+
 
 #section-1{
     display: flex;
@@ -52,7 +112,6 @@ footer{
     margin:none;
     width:100%;
 }
-/* =======================================================ABOUT STYLING ================================================================== */
 
 .banner{
     display:flex;
@@ -213,18 +272,20 @@ a:hover {
     margin: none;
     margin-top: 20px;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 #country-selector{
     display: flex;
-    background-color: rgba(0,0,0,0.6);
-    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    min-height: 100vh;
     /* padding-top: 20px; */
     margin: none;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    padding: 20px;
 }
 
 .country{
@@ -235,67 +296,15 @@ a:hover {
 .country:hover{
     /* background-color: rgba(190, 187, 187, 0.329); */
     opacity:1;
+    border-bottom: white 1px solid;
 }
 
-.hide{
-    display: none;
+.country.camouflage:hover{
+    border:none;
 }
 
 .camouflage{
     color: rgba(0,0,0,0.8);
-}
-
-/* =======================================================ASK ME BUTTON STYLING ================================================================== */
-
-.askMe-button{
-  
-  background-color: #0078d0;
-  border: 0;
-  border-radius: 17.5px;
-  /* border-radius: 56px; */
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  /* font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif; */
-  font-size: 18px;
-  font-weight: 600;
-  outline: 0;
-  /* padding: 16px 21px; */
-  padding: 10px 15px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: all .3s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.askMe-button:before {
-  background-color: initial;
-  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
-  /* border-radius: 125px; */
-  border-radius: 150px;
-  content: "";
-  height: 50%;
-  left: 4%;
-  opacity: .5;
-  position: absolute;
-  top: 0;
-  transition: all .3s;
-  width: 92%;
-}
-
-.askMe-button:hover {
-  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
-  transform: scale(1.05);
-}
-
-#bot{
-    position:fixed;
-    top: 63px;
-    right: 0px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 /* =======================================================MEDIA QUERIES ================================================================== */
