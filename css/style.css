@@ -244,6 +244,8 @@ a:hover {
     align-items: flex-start;
     width: 100%;
     padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.342);
+    color: white
 }
 
 #heading{

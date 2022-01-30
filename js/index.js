@@ -18,6 +18,9 @@ const risk_info = document.getElementById('risk_info');
 const get_started = document.getElementById('get_started');
 const chart1=document.getElementById("chart1");
 const headings = document.querySelectorAll("#heading");
+const travel_bulletin = document.querySelector('#travel-bulletin');
+
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 const ctx1 = document.getElementById("chart1").getContext("2d");
 const ctx2 = document.getElementById("chart2").getContext("2d");
@@ -161,7 +164,7 @@ var requestOptions = {
       })
       .then((data) => {
         data.forEach((entry) => {
-          dates_list.push(entry.Date);
+          dates_list.push(formatDate(entry.Date.substr(0,10)));
           cases_list.push(entry.Cases);
         });
       });
@@ -194,6 +197,17 @@ var requestOptions = {
 
     updateDOM(name);
   };
+//  ==============================================================================================================================================
+
+  function formatDate(string){
+    let date = string.substr(8,2);
+    let year = string.substr(0,4);
+    let month_number = Number(string.substr(5,2));
+    let month = MONTHS[month_number-1];
+
+    return formattedString = date+' '+month+' '+year;
+
+  }
 
 //  ==============================================================================================================================================
 
@@ -330,6 +344,23 @@ var requestOptions = {
 
 
 
-headings.onclick = function(e){
-console.log(e);
-}
+// travel_bulletin.addEventListener('click', (e)=>{
+//   if(e.target.classList.contains('dropDown') || e.target.classList.contains('dropUp') ){
+//       console.log(e.target.innerText);
+
+//       if(e.target.classList.contains('dropDown')){
+//         let text= e.target.innerText;
+//         e.target.classList.remove('dropDown');
+//         e.target.classList.add('dropUp');
+//         e.target.innerHTML = text + '<i class="fas fa-chevron-circle-up"></i>'
+
+//       }else{
+//         let text= e.target.innerText;
+//         e.target.classList.remove('dropUp');
+//         e.target.classList.add('dropDown');
+//         e.target.innerHTML = text + '<i class="fas fa-chevron-circle-down"></i>'
+//       }
+
+//   }
+// })
+
