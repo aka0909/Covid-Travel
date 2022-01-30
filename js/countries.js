@@ -193,7 +193,8 @@ let country_list = [{name: 'Afghanistan', code: 'AF'},
 {name: 'Zimbabwe', code: 'ZW'}];
 
 
-const country_list_element = document.getElementById('country-selector');
+const country_list_area = document.getElementById('country-selector');
+const input = document.getElementById('search-input');
 
 
 function create_country_list(){
@@ -205,7 +206,7 @@ function create_country_list(){
     country_list.forEach( (country, index) => {
         if( index % Math.ceil(num_countries/num_of_ul_lists) == 0){
             ul_list_id = `list-${i}`;
-            country_list_element.innerHTML += `<ul id='${ul_list_id}'></ul>`;
+            country_list_area.innerHTML += `<ul id='${ul_list_id}'></ul>`;
             i++;
         }
 
@@ -222,7 +223,7 @@ function create_country_list(){
   create_country_list();
 
 
-const input = document.getElementById('search-input');
+
 
 input.addEventListener("input", function(){
     let value = input.value.toLowerCase();

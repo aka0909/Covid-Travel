@@ -1,24 +1,28 @@
 const countryName = document.querySelector('.nation-info .name');
 const flag = document.querySelector('.nation-info .flag');
-const total_cases_element = document.querySelector(".total-cases .value");
-const new_cases_element = document.querySelector(".total-cases .new-value");
-const recovered_element = document.querySelector(".recovered .value");
-const new_recovered_element = document.querySelector(".recovered .new-value");
-const deaths_element = document.querySelector(".deaths .value");
-const new_deaths_element = document.querySelector(".deaths .new-value");
+
+const total_cases = document.querySelector(".total-cases .value");
+const new_cases = document.querySelector(".total-cases .new-value");
+const recovered = document.querySelector(".recovered .value");
+const new_recovered = document.querySelector(".recovered .new-value");
+const deaths = document.querySelector(".deaths .value");
+const new_deaths = document.querySelector(".deaths .new-value");
+
+const risk_info = document.getElementById('risk_info');
 const summary = document.getElementById("summary");
 const access_restrictions = document.getElementById("access_restrictions");
 const area_policy = document.getElementById("area_policy");
 const hotspots = document.getElementById("hotspots");
+
 const askMe_button = document.querySelector(".askMe-button");
 const bot = document.getElementById("bot");
 const download = document.querySelector('.download');
 const statistics = document.getElementById('statistics-area');
-const risk_info = document.getElementById('risk_info');
+
 const get_started = document.getElementById('get_started');
-const chart1=document.getElementById("chart1");
-const headings = document.querySelectorAll("#heading");
-const travel_bulletin = document.querySelector('#travel-bulletin');
+// const chart1=document.getElementById("chart1");
+// const headings = document.querySelectorAll("#heading");
+// const travel_bulletin = document.querySelector('#travel-bulletin');
 
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -74,7 +78,7 @@ var requestOptions = {
     area_policy.innerHTML="";
     hotspots.innerHTML="";
     risk_info.innerHTML="";
-    console.log(code);
+    // console.log(code);
     cases_list.length = 0;
     recovered_list.length = 0;
     deaths_list.length = 0;
@@ -230,12 +234,12 @@ var requestOptions = {
     const new_deaths_cases = total_deaths - deaths_list[deaths_list.length - 2];
   
     countryName.innerHTML = name.toUpperCase();
-    total_cases_element.innerHTML = total_cases;
-    new_cases_element.innerHTML = `+${new_confirmed_cases}`;
-    recovered_element.innerHTML = total_recovered;
-    new_recovered_element.innerHTML = `+${new_recovered_cases}`;
-    deaths_element.innerHTML = total_deaths;
-    new_deaths_element.innerHTML = `+${new_deaths_cases}`;
+    total_cases.innerHTML = total_cases;
+    new_cases.innerHTML = `+${new_confirmed_cases}`;
+    recovered.innerHTML = total_recovered;
+    new_recovered.innerHTML = `+${new_recovered_cases}`;
+    deaths.innerHTML = total_deaths;
+    new_deaths.innerHTML = `+${new_deaths_cases}`;
  }
 
 //  ==============================================================================================================================================
