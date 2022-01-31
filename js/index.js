@@ -78,12 +78,11 @@ var requestOptions = {
     area_policy.innerHTML="";
     hotspots.innerHTML="";
     risk_info.innerHTML="";
-    // console.log(code);
+
     cases_list.length = 0;
     recovered_list.length = 0;
     deaths_list.length = 0;
     dates_list.length = 0;
-    formatedDates.length = 0;
     api_fetch_stats(name);
     api_fetch_restrictions(code);
     get_started.click();
@@ -332,39 +331,4 @@ var requestOptions = {
 
 //  ==============================================================================================================================================
 
-
-//  download.onclick = function() {
-//    const a = document.createElement("a");
-
-
-//    document.body.appendChild(a);
-//    a.href = chart1.toDataURL();
-//    a.download = "statistics.png";
-//    a.click();
-//    document.body.removeChild(a);
-    
-
-//   }
-
-
-
-// travel_bulletin.addEventListener('click', (e)=>{
-//   if(e.target.classList.contains('dropDown') || e.target.classList.contains('dropUp') ){
-//       console.log(e.target.innerText);
-
-//       if(e.target.classList.contains('dropDown')){
-//         let text= e.target.innerText;
-//         e.target.classList.remove('dropDown');
-//         e.target.classList.add('dropUp');
-//         e.target.innerHTML = text + '<i class="fas fa-chevron-circle-up"></i>'
-
-//       }else{
-//         let text= e.target.innerText;
-//         e.target.classList.remove('dropUp');
-//         e.target.classList.add('dropDown');
-//         e.target.innerHTML = text + '<i class="fas fa-chevron-circle-down"></i>'
-//       }
-
-//   }
-// })
 
