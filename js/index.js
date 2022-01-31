@@ -20,9 +20,6 @@ const download = document.querySelector('.download');
 const statistics = document.getElementById('statistics-area');
 
 const get_started = document.getElementById('get_started');
-// const chart1=document.getElementById("chart1");
-// const headings = document.querySelectorAll("#heading");
-// const travel_bulletin = document.querySelector('#travel-bulletin');
 
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -107,7 +104,6 @@ var requestOptions = {
 
     await fetch(`https://test.api.amadeus.com/v1/duty-of-care/diseases/covid19-area-report?countryCode=${code}`, {
       headers: {
-        // Authorization: `Bearer ${token}`
         Authorization: `Bearer ${token}`
       }
     }).then(res=>res.json())

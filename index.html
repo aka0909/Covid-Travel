@@ -24,8 +24,8 @@
 
     <main>
         <div id="section-1">
-            <div class="banner">
-                <div id="About">
+            <div class="banner" data-aos="fade-up">
+                <div id="About" data-aos="fade-in">
                     <div id='title'><h1>ABOUT</h1></div>
                     <p><strong>Covid-Travel</strong> is a site dedicated to make planning international trips in the pandemic hassle free 
                         for its users. All the information that you need to plan a safe and smooth travel to your destination country is merely a 
@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <div  id="statistics-area">
+            <div  id="statistics-area" data-aos="fade-up">
                 <div class="nation-info">
                     <div class="flag info"></div>
                     <div class="name info">Loading...</div>
@@ -99,11 +99,11 @@
 
         </div>
 
-        <div id="section-2" class="mt-4">
+        <div id="section-2" class="mt-4" data-aos="fade-up">
             <input type="text" id="search-input" placeholder="Search Country..." />              
         </div>
 
-        <div id="country-selector-bg">
+        <div id="country-selector-bg" data-aos="fade-up">
             <div id="country-selector">
 
             </div>
@@ -124,6 +124,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/js/countries.js"></script>
     <script src="/js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             duration : 1000,
