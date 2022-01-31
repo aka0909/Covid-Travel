@@ -1,7 +1,7 @@
 const countryName = document.querySelector('.nation-info .name');
 const flag = document.querySelector('.nation-info .flag');
 
-const total_cases = document.querySelector(".total-cases .value");
+const total_cases_element = document.querySelector(".total-cases .value");
 const new_cases = document.querySelector(".total-cases .new-value");
 const recovered = document.querySelector(".recovered .value");
 const new_recovered = document.querySelector(".recovered .new-value");
@@ -233,7 +233,7 @@ var requestOptions = {
     const new_deaths_cases = total_deaths - deaths_list[deaths_list.length - 2];
   
     countryName.innerHTML = name.toUpperCase();
-    total_cases.innerHTML = total_cases;
+    total_cases_element.innerHTML = total_cases;
     new_cases.innerHTML = `+${new_confirmed_cases}`;
     recovered.innerHTML = total_recovered;
     new_recovered.innerHTML = `+${new_recovered_cases}`;
