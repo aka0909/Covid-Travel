@@ -90,17 +90,17 @@ var requestOptions = {
   //Fetch restriction in the country using the Amadeus API and update DOM
   const api_fetch_restrictions = async(code)=>{
 
-    // await fetch("https://test.api.amadeus.com/v1/security/oauth2/token", {
-    //   body: "grant_type=client_credentials&client_id=UAhrbGdonFS8rPqeeEURHnstLJVeUmCa&client_secret=Srxn7woV3HSoSwak",
-    //   headers: {
-    //     "Content-Type": "application/x-www-form-urlencoded"
-    //   },
-    //   method: "POST"
-    //   }).then(res => res.json())
-    //   .then(data =>{
-    //      token= data.access_token;
-    //     //  console.log(token);
-    //   });
+    await fetch("https://test.api.amadeus.com/v1/security/oauth2/token", {
+      body: "grant_type=client_credentials&client_id=UAhrbGdonFS8rPqeeEURHnstLJVeUmCa&client_secret=Srxn7woV3HSoSwak",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST"
+      }).then(res => res.json())
+      .then(data =>{
+         token= data.access_token;
+        //  console.log(token);
+      });
 
     await fetch(`https://test.api.amadeus.com/v1/duty-of-care/diseases/covid19-area-report?countryCode=${code}`, {
       headers: {
