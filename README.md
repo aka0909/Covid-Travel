@@ -1,4 +1,6 @@
 # Covid-Travel
+![Covid-Travel](https://user-images.githubusercontent.com/65956313/172945709-2f778d95-f8fb-4f75-98ab-e85e8cf7b27a.png)
+
 ## Introduction
 Planning an international trip has always been long and tiring process. It is important to keep oneself updated with the current affairs of the destination country for a safe and smooth travel experience. While travelling post second wave of the pandemic, it was imperative to be aware of the current covid-related policies and regulations in the destination country and statistics pertaining to the cases and health risk. **Covid-Travel** application aims at providing these crucial information at the click of a button!
 ## Short Video of the Site 
