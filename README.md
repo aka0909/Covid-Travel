@@ -1,6 +1,8 @@
 # Covid-Travel
 ## Introduction
 Planning an international trip has always been long and tiring process. It is important to keep oneself updated with the current affairs of the destination country for a safe and smooth travel experience. While travelling post second wave of the pandemic, it was imperative to be aware of the current covid-related policies and regulations in the destination country and statistics pertaining to the cases and health risk. **Covid-Travel** application aims at providing these crucial information at the click of a button!
+## Short Video of the Site 
+https://drive.google.com/file/d/17Iasre_Xvi2-uq5lEPaI_EaHk-x6IdID/view?usp=sharing
 ## App Features
 The application features:
    - Charts displaying the current Active, Recovered and Death cases as well as over a period of last 2 years of the destination
